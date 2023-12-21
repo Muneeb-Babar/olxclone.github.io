@@ -1,17 +1,13 @@
 function getData (){
   const productId = window.location.search.split('=')[1]
-
 console.log(productId);   
     fetch(`https://dummyjson.com/products/${productId}`)
     .then(res => res.json())
     .then(res => {
         const products = res
-
-
         console.log(products);
         const loader = document.getElementById('loader')
         loader.className = 'hide'
-
         const parentDiv = document.getElementById('products-details')
         const images = products.images
         console.log(images);
